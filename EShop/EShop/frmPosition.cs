@@ -41,9 +41,8 @@ namespace EShop
             txtPosName.MaxLength = 50;
 
             loadDataGridView();
-            txtPosID.Text = dgvPos.CurrentRow.Cells["PosID"].Value.ToString();
-            txtPosName.Text = dgvPos.CurrentRow.Cells["PosName"].Value.ToString();
-            loadDataGridView();
+            
+           
         }
         private void loadDataGridView()
         {

@@ -111,6 +111,7 @@
             this.dgvImInvoice.Name = "dgvImInvoice";
             this.dgvImInvoice.Size = new System.Drawing.Size(531, 494);
             this.dgvImInvoice.TabIndex = 18;
+            this.dgvImInvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellClick);
             this.dgvImInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImInvoice_CellContentClick);
             // 
             // panel2

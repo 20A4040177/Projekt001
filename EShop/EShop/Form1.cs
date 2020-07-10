@@ -188,6 +188,7 @@ namespace EShop
         private void label2_Click(object sender, EventArgs e)
         {
 
+
         }
 
         private void pnlChildForm_Paint(object sender, PaintEventArgs e)
@@ -255,6 +256,18 @@ namespace EShop
         private void button4_Click(object sender, EventArgs e)
         {
             openGrandchildForm(new frmStatInvoice());
+        }
+
+        private void btnReItem_Click(object sender, EventArgs e)
+        {
+            pnlSelect.Visible = true;
+            movePlnSelect(btnReItem);
+            openChildForm(new frmReItem());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openGrandchildForm(new frmStatCustomer());
         }
 
 

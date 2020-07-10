@@ -41,9 +41,8 @@ namespace EShop
             txtShiftName.MaxLength = 50;
 
             loadDataGridView();
-            txtShiftID.Text = dgvShift.CurrentRow.Cells["ShiftID"].Value.ToString();
-            txtShiftName.Text = dgvShift.CurrentRow.Cells["ShiftName"].Value.ToString();
-            loadDataGridView();
+            
+            
         }
         private void loadDataGridView()
         {

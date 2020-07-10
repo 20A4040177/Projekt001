@@ -88,7 +88,7 @@ namespace EShop
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
             resetValue();
-            txtCustomerID.Text = Functions.CreateKey("CU");
+            txtCustomerID.Text = Functions.CreateKey("CS");
             btnAdd.Enabled = true;
             txtCustomerName.Enabled = true;
             txtCustomerAdd.Enabled = true;
@@ -128,7 +128,7 @@ namespace EShop
             string selectSQL;
             string insertSQL;
             string updateSQL;
-            insertSQL = "insert into tblCustomer values('" + txtCustomerID.Text.Trim() + "','" + txtCustomerName.Text.Trim() + "','" + txtCustomerAdd.Text.Trim() + "','" + txtCustomerTel.Text.Trim() + "')";
+            
             
             if (btnAdd.Enabled == true)
             {
@@ -147,12 +147,11 @@ namespace EShop
                 selectSQL = "select * from tblCustomer where CustomerID='" + txtCustomerID.Text.Trim() + "'";
                 if (Functions.checkID(selectSQL) == true)
                 {
-                    MessageBox.Show("ID already exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtCustomerID.Focus();
-                    txtCustomerID.Text = "";
-                    return;
+                    
+                    txtCustomerID.Text = Functions.CreateKey("CS");
                 }
-                else Functions.modifySQL(insertSQL);
+                insertSQL = "insert into tblCustomer values('" + txtCustomerID.Text.Trim() + "','" + txtCustomerName.Text.Trim() + "','" + txtCustomerAdd.Text.Trim() + "','" + txtCustomerTel.Text.Trim() + "')";
+                Functions.modifySQL(insertSQL);
             }
             if (btnAdd.Enabled == false)
             {
@@ -272,9 +271,9 @@ namespace EShop
             {
                 if (txtCustomerTel.Text.Trim().Length > 0)
                 {
-                    txtCustomerID.Text = "CU" + txtCustomerTel.Text;
+                    txtCustomerID.Text = "CS" + txtCustomerTel.Text;
                 }
-                else txtCustomerID.Text = Functions.CreateKey("CU");
+                else txtCustomerID.Text = Functions.CreateKey("CS");
             }
         }
 

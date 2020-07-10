@@ -30,19 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSaleInvoice));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSaleInvoice = new System.Windows.Forms.DataGridView();
-            this.txtImInvoiceID = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lbSaleInvoiceID = new System.Windows.Forms.Label();
-            this.lbStaffID = new System.Windows.Forms.Label();
-            this.lbSaleDate = new System.Windows.Forms.Label();
-            this.lbCustomerID = new System.Windows.Forms.Label();
-            this.lbSaleInvoiceTotal = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -50,7 +41,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnViewDetail = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.dtpSearch = new System.Windows.Forms.DateTimePicker();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleInvoice)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +61,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1014, 50);
             this.panel1.TabIndex = 18;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(885, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(50, 50);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnHome
             // 
@@ -102,87 +111,8 @@
             this.dgvSaleInvoice.Name = "dgvSaleInvoice";
             this.dgvSaleInvoice.Size = new System.Drawing.Size(531, 494);
             this.dgvSaleInvoice.TabIndex = 19;
+            this.dgvSaleInvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellClick);
             this.dgvSaleInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleInvoice_CellContentClick);
-            // 
-            // txtImInvoiceID
-            // 
-            this.txtImInvoiceID.Location = new System.Drawing.Point(256, 84);
-            this.txtImInvoiceID.Name = "txtImInvoiceID";
-            this.txtImInvoiceID.Size = new System.Drawing.Size(158, 20);
-            this.txtImInvoiceID.TabIndex = 34;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(256, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 35;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(256, 207);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 36;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(256, 271);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(158, 20);
-            this.textBox3.TabIndex = 37;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(256, 337);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(158, 20);
-            this.textBox4.TabIndex = 38;
-            // 
-            // lbSaleInvoiceID
-            // 
-            this.lbSaleInvoiceID.AutoSize = true;
-            this.lbSaleInvoiceID.Location = new System.Drawing.Point(174, 84);
-            this.lbSaleInvoiceID.Name = "lbSaleInvoiceID";
-            this.lbSaleInvoiceID.Size = new System.Drawing.Size(42, 13);
-            this.lbSaleInvoiceID.TabIndex = 39;
-            this.lbSaleInvoiceID.Text = "Sale ID";
-            // 
-            // lbStaffID
-            // 
-            this.lbStaffID.AutoSize = true;
-            this.lbStaffID.Location = new System.Drawing.Point(174, 146);
-            this.lbStaffID.Name = "lbStaffID";
-            this.lbStaffID.Size = new System.Drawing.Size(43, 13);
-            this.lbStaffID.TabIndex = 40;
-            this.lbStaffID.Text = "Staff ID";
-            // 
-            // lbSaleDate
-            // 
-            this.lbSaleDate.AutoSize = true;
-            this.lbSaleDate.Location = new System.Drawing.Point(174, 207);
-            this.lbSaleDate.Name = "lbSaleDate";
-            this.lbSaleDate.Size = new System.Drawing.Size(30, 13);
-            this.lbSaleDate.TabIndex = 41;
-            this.lbSaleDate.Text = "Date";
-            // 
-            // lbCustomerID
-            // 
-            this.lbCustomerID.AutoSize = true;
-            this.lbCustomerID.Location = new System.Drawing.Point(174, 271);
-            this.lbCustomerID.Name = "lbCustomerID";
-            this.lbCustomerID.Size = new System.Drawing.Size(65, 13);
-            this.lbCustomerID.TabIndex = 42;
-            this.lbCustomerID.Text = "Customer ID";
-            // 
-            // lbSaleInvoiceTotal
-            // 
-            this.lbSaleInvoiceTotal.AutoSize = true;
-            this.lbSaleInvoiceTotal.Location = new System.Drawing.Point(174, 337);
-            this.lbSaleInvoiceTotal.Name = "lbSaleInvoiceTotal";
-            this.lbSaleInvoiceTotal.Size = new System.Drawing.Size(58, 13);
-            this.lbSaleInvoiceTotal.TabIndex = 43;
-            this.lbSaleInvoiceTotal.Text = "Total Price";
             // 
             // panel2
             // 
@@ -228,6 +158,7 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -243,6 +174,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -293,38 +225,53 @@
             this.btnViewDetail.UseVisualStyleBackColor = false;
             this.btnViewDetail.Click += new System.EventHandler(this.btnViewDetail_Click);
             // 
-            // btnRefresh
+            // dtpSearch
             // 
-            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(885, 0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(50, 50);
-            this.btnRefresh.TabIndex = 5;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.dtpSearch.Location = new System.Drawing.Point(75, 127);
+            this.dtpSearch.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpSearch.Name = "dtpSearch";
+            this.dtpSearch.Size = new System.Drawing.Size(227, 20);
+            this.dtpSearch.TabIndex = 50;
+            this.dtpSearch.ValueChanged += new System.EventHandler(this.dtpSearch_ValueChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(352, 127);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 49;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(200, 82);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(227, 21);
+            this.txtSearch.TabIndex = 48;
+            // 
+            // cboSearch
+            // 
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Location = new System.Drawing.Point(75, 84);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(104, 21);
+            this.cboSearch.TabIndex = 47;
+            this.cboSearch.SelectedIndexChanged += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
             // 
             // frmSaleInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 681);
+            this.Controls.Add(this.dtpSearch);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.cboSearch);
             this.Controls.Add(this.btnViewDetail);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lbSaleInvoiceTotal);
-            this.Controls.Add(this.lbCustomerID);
-            this.Controls.Add(this.lbSaleDate);
-            this.Controls.Add(this.lbStaffID);
-            this.Controls.Add(this.lbSaleInvoiceID);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtImInvoiceID);
             this.Controls.Add(this.dgvSaleInvoice);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -345,16 +292,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvSaleInvoice;
-        private System.Windows.Forms.TextBox txtImInvoiceID;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label lbSaleInvoiceID;
-        private System.Windows.Forms.Label lbStaffID;
-        private System.Windows.Forms.Label lbSaleDate;
-        private System.Windows.Forms.Label lbCustomerID;
-        private System.Windows.Forms.Label lbSaleInvoiceTotal;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAdd;
@@ -364,5 +301,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnViewDetail;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.DateTimePicker dtpSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboSearch;
     }
 }

@@ -32,3 +32,5 @@ D:\Winforms\EShop\EShop\obj\Release\EShop.frmSaleInvoiceDetail_old.resources
 D:\Winforms\EShop\EShop\obj\Release\EShop.frmStatSup.resources
 D:\Winforms\EShop\EShop\obj\Release\EShop.frmStatRevenue.resources
 D:\Winforms\EShop\EShop\obj\Release\EShop.frmStatInvoice.resources
+D:\Winforms\EShop\EShop\obj\Release\EShop.frmReItem.resources
+D:\Winforms\EShop\EShop\obj\Release\EShop.frmStatCustomer.resources

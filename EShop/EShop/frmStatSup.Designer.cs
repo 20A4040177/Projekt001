@@ -81,7 +81,7 @@
             // dgvSup
             // 
             this.dgvSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSup.Location = new System.Drawing.Point(487, 38);
+            this.dgvSup.Location = new System.Drawing.Point(406, 38);
             this.dgvSup.Name = "dgvSup";
             this.dgvSup.Size = new System.Drawing.Size(382, 159);
             this.dgvSup.TabIndex = 11;
@@ -90,7 +90,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(564, 219);
+            this.label1.Location = new System.Drawing.Point(483, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 16);
             this.label1.TabIndex = 12;

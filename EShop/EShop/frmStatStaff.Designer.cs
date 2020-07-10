@@ -44,7 +44,7 @@
             // dgvProduct
             // 
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(503, 35);
+            this.dgvProduct.Location = new System.Drawing.Point(381, 33);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(453, 180);
             this.dgvProduct.TabIndex = 0;
@@ -81,7 +81,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(640, 236);
+            this.label1.Location = new System.Drawing.Point(518, 234);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 16);
             this.label1.TabIndex = 4;
@@ -109,9 +109,9 @@
             // 
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 312);
+            this.panel1.Location = new System.Drawing.Point(0, 442);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1017, 40);
+            this.panel1.Size = new System.Drawing.Size(1250, 40);
             this.panel1.TabIndex = 7;
             // 
             // btnClose
@@ -120,7 +120,7 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(942, 0);
+            this.btnClose.Location = new System.Drawing.Point(1175, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 40);
             this.btnClose.TabIndex = 0;
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 352);
+            this.ClientSize = new System.Drawing.Size(1250, 482);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

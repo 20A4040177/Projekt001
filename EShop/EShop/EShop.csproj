@@ -150,6 +150,12 @@
     <Compile Include="frmPosition.Designer.cs">
       <DependentUpon>frmPosition.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReItem.Designer.cs">
+      <DependentUpon>frmReItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSaleInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,12 @@
     </Compile>
     <Compile Include="frmStaffDetail.Designer.cs">
       <DependentUpon>frmStaffDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatCustomer.Designer.cs">
+      <DependentUpon>frmStatCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStatInvoice.cs">
       <SubType>Form</SubType>
@@ -273,6 +285,9 @@
     <EmbeddedResource Include="frmPosition.resx">
       <DependentUpon>frmPosition.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReItem.resx">
+      <DependentUpon>frmReItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSaleInvoice.resx">
       <DependentUpon>frmSaleInvoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaffDetail.resx">
       <DependentUpon>frmStaffDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatCustomer.resx">
+      <DependentUpon>frmStatCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStatInvoice.resx">
       <DependentUpon>frmStatInvoice.cs</DependentUpon>

@@ -35,12 +35,11 @@ namespace EShop
         private void frmItemType_Load(object sender, EventArgs e)
         {
             loadDataGridView();
+            dgvType.ClearSelection();
             txtTypeID.Enabled = false;
             txtTypeName.Enabled = false;
             cboCatID.Enabled = false;
-            txtTypeID.Text = dgvType.CurrentRow.Cells["TypeID"].Value.ToString();
-            txtTypeName.Text = dgvType.CurrentRow.Cells["TypeName"].Value.ToString();
-            cboCatID.Text = dgvType.CurrentRow.Cells["CatID"].Value.ToString();
+            
             btnDelete.Enabled = false;
             btnCancel.Enabled = false;
             btnSave.Enabled = false;

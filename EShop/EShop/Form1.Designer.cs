@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainPage));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnReItem = new System.Windows.Forms.Button();
             this.btnShutDown = new System.Windows.Forms.Button();
             this.btnShift = new System.Windows.Forms.Button();
             this.btnPosition = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.picStoreIcon = new System.Windows.Forms.PictureBox();
             this.btnHide = new System.Windows.Forms.Button();
             this.pnlChildForm = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.pnlGrandchildForm = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -86,6 +88,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.SlateGray;
+            this.pnlMenu.Controls.Add(this.btnReItem);
             this.pnlMenu.Controls.Add(this.btnShutDown);
             this.pnlMenu.Controls.Add(this.btnShift);
             this.pnlMenu.Controls.Add(this.btnPosition);
@@ -107,9 +110,27 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(250, 681);
+            this.pnlMenu.Size = new System.Drawing.Size(250, 794);
             this.pnlMenu.TabIndex = 0;
             this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.plnMenu_Paint);
+            // 
+            // btnReItem
+            // 
+            this.btnReItem.BackColor = System.Drawing.Color.SlateGray;
+            this.btnReItem.FlatAppearance.BorderSize = 0;
+            this.btnReItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReItem.ForeColor = System.Drawing.Color.White;
+            this.btnReItem.Image = ((System.Drawing.Image)(resources.GetObject("btnReItem.Image")));
+            this.btnReItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReItem.Location = new System.Drawing.Point(10, 630);
+            this.btnReItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnReItem.Name = "btnReItem";
+            this.btnReItem.Size = new System.Drawing.Size(240, 30);
+            this.btnReItem.TabIndex = 8;
+            this.btnReItem.Text = "Returned Items";
+            this.btnReItem.UseVisualStyleBackColor = false;
+            this.btnReItem.Click += new System.EventHandler(this.btnReItem_Click);
             // 
             // btnShutDown
             // 
@@ -118,7 +139,7 @@
             this.btnShutDown.FlatAppearance.BorderSize = 0;
             this.btnShutDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShutDown.Image = ((System.Drawing.Image)(resources.GetObject("btnShutDown.Image")));
-            this.btnShutDown.Location = new System.Drawing.Point(0, 645);
+            this.btnShutDown.Location = new System.Drawing.Point(0, 758);
             this.btnShutDown.Name = "btnShutDown";
             this.btnShutDown.Size = new System.Drawing.Size(250, 36);
             this.btnShutDown.TabIndex = 0;
@@ -453,6 +474,7 @@
             // pnlChildForm
             // 
             this.pnlChildForm.BackColor = System.Drawing.Color.White;
+            this.pnlChildForm.Controls.Add(this.button5);
             this.pnlChildForm.Controls.Add(this.pnlDashboard);
             this.pnlChildForm.Controls.Add(this.panel7);
             this.pnlChildForm.Controls.Add(this.panel6);
@@ -462,9 +484,26 @@
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(250, 0);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(1014, 681);
+            this.pnlChildForm.Size = new System.Drawing.Size(1247, 794);
             this.pnlChildForm.TabIndex = 1;
             this.pnlChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlChildForm_Paint);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(945, 120);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(227, 110);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Customer";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pnlDashboard
             // 
@@ -475,7 +514,7 @@
             this.pnlDashboard.Controls.Add(this.panel9);
             this.pnlDashboard.Location = new System.Drawing.Point(-3, 253);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(1017, 428);
+            this.pnlDashboard.Size = new System.Drawing.Size(1250, 541);
             this.pnlDashboard.TabIndex = 5;
             // 
             // pnlGrandchildForm
@@ -486,7 +525,7 @@
             this.pnlGrandchildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGrandchildForm.Location = new System.Drawing.Point(0, 59);
             this.pnlGrandchildForm.Name = "pnlGrandchildForm";
-            this.pnlGrandchildForm.Size = new System.Drawing.Size(1017, 369);
+            this.pnlGrandchildForm.Size = new System.Drawing.Size(1250, 482);
             this.pnlGrandchildForm.TabIndex = 1;
             // 
             // panel9
@@ -497,7 +536,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1017, 59);
+            this.panel9.Size = new System.Drawing.Size(1250, 59);
             this.panel9.TabIndex = 0;
             // 
             // label2
@@ -547,7 +586,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(212, 110);
             this.button4.TabIndex = 0;
-            this.button4.Text = "Invoice";
+            this.button4.Text = "Import";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -652,7 +691,7 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1014, 100);
+            this.panel3.Size = new System.Drawing.Size(1247, 100);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -684,7 +723,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1497, 794);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -754,6 +793,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnReItem;
     }
 }
 

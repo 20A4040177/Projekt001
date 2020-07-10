@@ -117,6 +117,9 @@ namespace EShop
             txtCustomer.MaxLength = 50;
             txtAddress.MaxLength = 50;
             txtPhone.MaxLength = 11;
+            cboItem.Enabled = false;
+            nbrDiscount.Enabled = false;
+            nbrDiscount.Enabled = false;
         }
         private void loadDataGridView()
         {
@@ -144,9 +147,9 @@ namespace EShop
         {
             if (txtPhone.Text== "")
             {
-                cboCustomer.Text =Functions.CreateKey("CU");
+                cboCustomer.Text =Functions.CreateKey("CS");
             }
-            else cboCustomer.Text = "CU" + txtPhone.Text;
+            else cboCustomer.Text = "CS" + txtPhone.Text;
         }
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
@@ -237,8 +240,7 @@ namespace EShop
             selectSQL = "select * from tblCustomer where CustomerID='" + cboCustomer.Text.Trim() + "'";
             if (Functions.checkID(selectSQL) == true)
             {
-                MessageBox.Show("ID already exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                cboCustomer.Text = Functions.CreateKey("CS");
 
             }
 
@@ -248,6 +250,9 @@ namespace EShop
             txtCustomer.Enabled = false;
             txtAddress.Enabled = false;
             txtPhone.Enabled = false;
+            cboItem.Enabled = true;
+            nbrDiscount.Enabled = true;
+            nbrDiscount.Enabled = true;
             
             
 
@@ -260,7 +265,9 @@ namespace EShop
             cboCustomer.SelectedIndex = -1;
             cboCustomer.Enabled = true;
             btnSaveCus.Enabled = false;
-            
+            cboItem.Enabled = true;
+            nbrDiscount.Enabled = true;
+            nbrDiscount.Enabled = true;
           
         }
 
@@ -301,7 +308,7 @@ namespace EShop
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (cboCustomer.SelectedIndex == -1)
+            if (cboCustomer.SelectedIndex == -1&&cboCustomer.Text=="")
             {
                 MessageBox.Show("Please select a valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboCustomer.Focus();
@@ -331,6 +338,14 @@ namespace EShop
             Functions.modifySQL(insertSQL1);
             Functions.modifySQL(insertSQL2);
             btnSave.Enabled = false;
+            cboItem.Enabled = false;
+            nbrQuantity.Enabled = false;
+            nbrDiscount.Enabled = false;
+            btnAddItem.Enabled = false;
+            btnRemove.Enabled = false;
+            dgvItem.Enabled = false;
+
+
         }
 
         private void formclosing(object sender, FormClosingEventArgs e)

@@ -39,10 +39,9 @@ namespace EShop
             txtCountryName.MaxLength = 50;
            
             loadDataGridView();
-            txtCountryID.Text = dgvCountry.CurrentRow.Cells["CountryID"].Value.ToString();
-            txtCountryName.Text = dgvCountry.CurrentRow.Cells["CountryName"].Value.ToString();
             
-            loadDataGridView();
+            
+           
 
         }
         private void loadDataGridView()

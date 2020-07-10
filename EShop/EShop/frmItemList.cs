@@ -140,13 +140,17 @@ namespace EShop
         {
             string deleteSQL1;
             string deleteSQL2;
-            
+            if (dgvItemList.Rows.Count==0)
+            {
+                MessageBox.Show("No records has been chosen!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             deleteSQL1 = "delete tblItemList where ItemID='" + dgvItemList.CurrentRow.Cells["ItemID"].Value.ToString() + "'";
             deleteSQL2 = "delete tblCalc where ItemID='" + dgvItemList.CurrentRow.Cells["ItemID"].Value.ToString() + "'";
             if (MessageBox.Show("Do you want to delete this record?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Functions.modifySQL(deleteSQL2);
-                Functions.modifySQL(deleteSQL1);
+                Functions.deleteSQL(deleteSQL2);
+                Functions.deleteSQL(deleteSQL1);
 
                 loadDataGridView("select ItemID,ItemName,Quantity,Warranty from tblItemList");
             }

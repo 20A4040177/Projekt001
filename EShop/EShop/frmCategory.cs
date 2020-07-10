@@ -40,9 +40,7 @@ namespace EShop
             txtCatName.MaxLength = 50;
             txtUsage.MaxLength = 100;
             loadDataGridView();
-            txtCatID.Text = dgvCat.CurrentRow.Cells["CatID"].Value.ToString();
-            txtCatName.Text = dgvCat.CurrentRow.Cells["CatName"].Value.ToString();
-            txtUsage.Text = dgvCat.CurrentRow.Cells["CatUsage"].Value.ToString();
+            
 
         }
         private void loadDataGridView()

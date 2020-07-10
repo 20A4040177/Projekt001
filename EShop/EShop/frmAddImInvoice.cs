@@ -157,7 +157,10 @@ namespace EShop
             txtPhone.MaxLength = 11;
             btnNewItem.Enabled = false;
             btnAddItem.Enabled = false;
-
+            cboItem.Enabled = false;
+            nbrDiscount.Enabled = false;
+            nbrQuantity.Enabled = false;
+            nbrUnitPrice.Enabled = false;
             
         }
 
@@ -165,9 +168,9 @@ namespace EShop
         {
             if (txtPhone.Text == "")
             {
-                cboSupplier.Text = Functions.CreateKey("SUP");
+                cboSupplier.Text = Functions.CreateKey("SP");
             }
-            else cboSupplier.Text = "SUP" + txtPhone.Text;
+            else cboSupplier.Text = "SP" + txtPhone.Text;
         }
 
         private void btnCancelSup_Click(object sender, EventArgs e)
@@ -176,6 +179,10 @@ namespace EShop
             btnNewItem.Enabled = true;
             btnAddItem.Enabled = true;
             cboSupplier.Text = "";
+            cboItem.Enabled = true;
+            nbrDiscount.Enabled = true;
+            nbrQuantity.Enabled = true;
+            nbrUnitPrice.Enabled = true;
         }
 
         private void btnSaveSup_Click(object sender, EventArgs e)
@@ -192,6 +199,12 @@ namespace EShop
                 txtPhone.Focus();
                 return;
             }
+            string selectSQL = "select * from tblSupplier where SupplierID='" + cboSupplier.Text.Trim() + "'";
+            if (Functions.checkID(selectSQL) == true)
+            {
+
+                cboSupplier.Text = Functions.CreateKey("SP");
+            }
             string insertSQL;
             insertSQL = "insert into tblSupplier values('" + cboSupplier.Text.Trim() + "','" + txtSupplier.Text.Trim() + "','" + txtAddress.Text.Trim() + "','" + txtPhone.Text.Trim() + "')";
             Functions.modifySQL(insertSQL);
@@ -205,6 +218,10 @@ namespace EShop
             btnCancelSup.Enabled = false;
             btnNewItem.Enabled = true;
             btnAddItem.Enabled = true;
+            cboItem.Enabled = true;
+            nbrDiscount.Enabled = true;
+            nbrQuantity.Enabled = true;
+            nbrUnitPrice.Enabled = true;
         }
 
         private void cboItem_SelectedIndexChanged(object sender, EventArgs e)
@@ -293,7 +310,7 @@ namespace EShop
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (cboSupplier.SelectedIndex==-1)
+            if (cboSupplier.SelectedIndex==-1&&cboSupplier.Text=="")
             {
                 MessageBox.Show("Please select a valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboSupplier.Focus();
@@ -323,6 +340,13 @@ namespace EShop
             Functions.modifySQL(insertSQL1);
             Functions.modifySQL(insertSQL2);
             btnSave.Enabled = false;
+            cboItem.Enabled = false;
+            nbrDiscount.Enabled = false;
+            nbrQuantity.Enabled = false;
+            nbrUnitPrice.Enabled = false;
+            btnRemove.Enabled = false;
+            btnDone.Enabled = false;
+            
             
         }
 

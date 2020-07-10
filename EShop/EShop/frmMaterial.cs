@@ -46,8 +46,7 @@ namespace EShop
             txtMatName.MaxLength = 50;
 
             loadDataGridView();
-            txtMatID.Text = dgvMat.CurrentRow.Cells["MatID"].Value.ToString();
-            txtMatName.Text = dgvMat.CurrentRow.Cells["MatName"].Value.ToString();
+            
 
             
             loadDataGridView();

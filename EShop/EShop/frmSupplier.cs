@@ -42,10 +42,7 @@ namespace EShop
             txtSupplierAdd.MaxLength = 50;
             txtSupplierTel.MaxLength = 11;
             loadDataGridView();
-            txtSupplierID.Text = dgvSupplier.CurrentRow.Cells["SupplierID"].Value.ToString();
-            txtSupplierName.Text = dgvSupplier.CurrentRow.Cells["SupplierName"].Value.ToString();
-            txtSupplierAdd.Text = dgvSupplier.CurrentRow.Cells["SupplierAdd"].Value.ToString();
-            txtSupplierTel.Text = dgvSupplier.CurrentRow.Cells["SupplierTel"].Value.ToString();
+            
             
 
         }
@@ -98,7 +95,7 @@ namespace EShop
         private void btnAdd_Click(object sender, EventArgs e)
         {
             resetValue();
-            txtSupplierID.Text = Functions.CreateKey("SUP");
+            txtSupplierID.Text = Functions.CreateKey("SP");
             txtSupplierName.Enabled = true;
             txtSupplierAdd.Enabled = true;
             txtSupplierTel.Enabled = true;
@@ -148,7 +145,7 @@ namespace EShop
             string selectSQL;
             string insertSQL;
             string updateSQL;
-            insertSQL = "insert into tblSupplier values('" + txtSupplierID.Text.Trim() + "','" + txtSupplierName.Text.Trim() + "','" + txtSupplierAdd.Text.Trim() +"','"+txtSupplierTel.Text.Trim()+ "')";
+            
             if (btnEdit.Enabled == false)
             {
                 if (txtSupplierID.Text.Trim().Length == 0)
@@ -179,12 +176,11 @@ namespace EShop
                 selectSQL = "select * from tblSupplier where SupplierID='" + txtSupplierID.Text.Trim() + "'";
                 if (Functions.checkID(selectSQL) == true)
                 {
-                    MessageBox.Show("ID already exists", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtSupplierID.Focus();
-                    txtSupplierID.Text = "";
-                    return;
+
+                    txtSupplierID.Text = Functions.CreateKey("SP");
                 }
-                else Functions.modifySQL(insertSQL);
+                insertSQL = "insert into tblSupplier values('" + txtSupplierID.Text.Trim() + "','" + txtSupplierName.Text.Trim() + "','" + txtSupplierAdd.Text.Trim() + "','" + txtSupplierTel.Text.Trim() + "')";
+                Functions.modifySQL(insertSQL);
             }
             else if (btnEdit.Enabled == true)
             {
@@ -220,7 +216,7 @@ namespace EShop
         {
             if (btnEdit.Enabled == false)
             {
-                txtSupplierID.Text = "SUP" + txtSupplierTel.Text;
+                txtSupplierID.Text = "SP" + txtSupplierTel.Text;
             }
         }
 

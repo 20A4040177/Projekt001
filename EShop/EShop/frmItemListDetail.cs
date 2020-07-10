@@ -69,6 +69,12 @@ namespace EShop
                 btnSave.Enabled = false;
                 btnCancel.Enabled = false;
                 btnSelect.Enabled = false;
+                imgPath = Functions.getFieldValues("select ItemImage from tblItemList where ItemID='" + txtItemID.Text.Trim() + "'");
+                cboCatID.Text=Functions.getFieldValues("select CatName from tblItemList inner join tblCategory on tblCategory.CatID=tblItemList.CatID where ItemID='" + txtItemID.Text.Trim() + "'");
+                cboCountryID.Text = Functions.getFieldValues("select CountryName from tblItemList inner join tblCountry on tblCountry.CountryID=tblItemList.CountryID where ItemID='" + txtItemID.Text.Trim() + "'");
+                cboMatID.Text = Functions.getFieldValues("select MatName from tblItemList inner join tblMaterial on tblMaterial.MatID=tblItemList.MatID where ItemID='" + txtItemID.Text.Trim() + "'");
+                cboTypeID.Text = Functions.getFieldValues("select TypeName from tblItemList inner join tblItemType on tblItemType.TypeID=tblItemList.TypeID where ItemID='" + txtItemID.Text.Trim() + "'");
+                cboUnitID.Text = Functions.getFieldValues("select UnitName from tblItemList inner join tblUnit on tblUnit.UnitID=tblItemList.UnitID where ItemID='" + txtItemID.Text.Trim() + "'");
 
             }
             else
@@ -184,7 +190,7 @@ namespace EShop
                     txtItemID.Focus();
                     return;
                 }
-                insertSQL = "insert into tblItemList(ItemID,ItemName,CatID,TypeID,UnitID,MatID,CountryID,ItemImage) values ('" + txtItemID.Text.Trim() + "','" + txtItemName.Text.Trim() + "','" + cboCatID.SelectedValue.ToString().Trim() + "','" + cboTypeID.SelectedValue.ToString().Trim() + "','" + cboUnitID.SelectedValue.ToString().Trim() + "','" + cboMatID.SelectedValue.ToString().Trim() + "','" + cboCountryID.SelectedValue.ToString().Trim() + "','" + imgPath + "')";
+                insertSQL = "insert into tblItemList(ItemID,ItemName,CatID,TypeID,UnitID,MatID,CountryID,ItemImage,Warranty) values ('" + txtItemID.Text.Trim() + "','" + txtItemName.Text.Trim() + "','" + cboCatID.SelectedValue.ToString().Trim() + "','" + cboTypeID.SelectedValue.ToString().Trim() + "','" + cboUnitID.SelectedValue.ToString().Trim() + "','" + cboMatID.SelectedValue.ToString().Trim() + "','" + cboCountryID.SelectedValue.ToString().Trim() + "','" + imgPath +"',"+Convert.ToInt32(txtWarranty.Text)+ ")";
                 Functions.modifySQL(insertSQL);
                 Functions.modifySQL("insert into tblCalc(ItemID) values('" + txtItemID.Text.Trim() + "')");
 

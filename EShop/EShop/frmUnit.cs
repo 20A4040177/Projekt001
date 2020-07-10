@@ -41,9 +41,8 @@ namespace EShop
             txtUnitName.MaxLength = 50;
 
             loadDataGridView();
-            txtUnitID.Text = dgvUnit.CurrentRow.Cells["UnitID"].Value.ToString();
-            txtUnitName.Text = dgvUnit.CurrentRow.Cells["UnitName"].Value.ToString();
-            loadDataGridView();
+            
+            
         }
 
         private void loadDataGridView()

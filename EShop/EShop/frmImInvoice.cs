@@ -12,6 +12,7 @@ namespace EShop
     public partial class frmImInvoice : Form
     {
         DataTable tblGridView;
+        string invoiceID;
         
         public frmImInvoice()
         {
@@ -176,7 +177,32 @@ namespace EShop
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string deleteSQL1;
+            string deleteSQL2;
+            deleteSQL1 = "delete from tblImInvoiceDetail where InvoiceID='" + invoiceID + "'";
+            deleteSQL2 = "delete from tblImInvoice where InvoiceID='" + invoiceID + "'";
+            if (invoiceID == "")
+            {
+                MessageBox.Show("Please choose a record", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                DialogResult dlgResult;
+                dlgResult = MessageBox.Show("Delete this record?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlgResult == DialogResult.Yes)
+                {
+                    Functions.deleteSQL(deleteSQL1);
+                    Functions.deleteSQL(deleteSQL2);
+                    loadDataGridView(" select * from tblImInvoice");
+                }
+            }
+        }
 
+        private void cellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            invoiceID = dgvImInvoice.CurrentRow.Cells["InvoiceID"].Value.ToString();
         }
     }
 }
